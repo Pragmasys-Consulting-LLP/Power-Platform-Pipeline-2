@@ -50,6 +50,9 @@ jobs:
         environment-url: ${{env.ENVIRONMENT_URL}}
         user-name: ${{env.USERNAME}}
         password-secret: ${{ secrets.Anushree123 }}
+        CLIENT_ID: ${{secrets.2587cbc2-7235-440a-af3e-c273b6d2ed3a}}   
+        TENANT_ID: ${{secrets.8e10c401-3e7d-4621-ac62-e0767c824e5d}}   
+        
 
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
