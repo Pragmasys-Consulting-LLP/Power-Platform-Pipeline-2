@@ -28,7 +28,8 @@ env:
 #edit your values here
   ENVIRONMENT_URL: orgdfa96353.crm8.dynamics.com
   USERNAME : AnushreeChaturvedi@Pragmasys954.onmicrosoft.com
-
+  CLIENT_ID : 2587cbc2-7235-440a-af3e-c273b6d2ed3a
+  TENANT_ID : 8e10c401-3e7d-4621-ac62-e0767c824e5d
 
 permissions:
   contents: write
@@ -50,8 +51,8 @@ jobs:
         environment-url: ${{env.ENVIRONMENT_URL}}
         user-name: ${{env.USERNAME}}
         password-secret: ${{ secrets.Anushree123 }}
-        CLIENT_ID: ${{secrets.2587cbc2-7235-440a-af3e-c273b6d2ed3a}}   
-        TENANT_ID: ${{secrets.8e10c401-3e7d-4621-ac62-e0767c824e5d}}   
+        client-id: ${{secrets.CLIENT_ID}}   
+        tenant-id: ${{secrets.TENANT_ID}}   
         
 
     - name: export-solution action
