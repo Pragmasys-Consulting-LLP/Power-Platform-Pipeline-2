@@ -4,19 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       artifact_url:
-        description: " https://orgc3807afe.crm8.dynamics.com/api/data/v9.0/deploymentartifacts(503e6e9b-0531-ee11-bdf4-000d3a0aa0b8)/artifactfile/$value"
+        description: "The url of the Dataverse record ID for the artifact created by the pipelines (Example: https://[your-env].crm.dynamics.com/api/data/v9.0/deploymentartifacts([your-artifact-id])/artifactfile/$value)."
         required: true
       solution_name:
-        description: "Solution3"
+        description: "Name of the Solution in Dataverse environment"
         required: true
       user_name: 
-        description: "AnushreeChaturvedi@Pragmasys954.onmicrosoft.com"
+        description: "User name for the commit"
         required: true
       source_branch:
-        description: "main"
+        description: "Branch for the solution commit"
         required: true
       target_branch:
-        description: "Target"
+        description: "Branch to create for the solution commit"
         required: false
       commit_message:
         description: "Message to provide for the commit"
