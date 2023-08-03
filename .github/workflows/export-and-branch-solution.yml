@@ -47,8 +47,8 @@ jobs:
     - name: who-am-i action
       uses: microsoft/powerplatform-actions/who-am-i@v0
       with:
-        environment-url: ${{env.orgdfa96353.crm8.dynamics.com}}
-        user-name: ${{env.AnushreeChaturvedi@Pragmasys954.onmicrosoft.com}}
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        user-name: ${{env.USERNAME}}
         password-secret: ${{ secrets.Anushree123 }}
 
     - name: export-solution action
