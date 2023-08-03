@@ -49,7 +49,7 @@ jobs:
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
         user-name: ${{env.USERNAME}}
-        password-secret: ${{ secrets.password }}
+        password-secret: ${{ secrets.Anushree123 }}
 
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
@@ -74,5 +74,5 @@ jobs:
       with:
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
         solution-target-folder: ${{ github.event.inputs.solution_target_folder}}/${{ github.event.inputs.solution_name }}
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.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 }}
         allow-empty-commit: true
