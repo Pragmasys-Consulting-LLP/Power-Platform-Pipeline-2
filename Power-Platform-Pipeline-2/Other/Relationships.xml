@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_cr6e7_autonumber" />
+  <EntityRelationship Name="business_unit_cr6e7_departments" />
+  <EntityRelationship Name="business_unit_cr6e7_designation" />
+  <EntityRelationship Name="business_unit_cr6e7_lead" />
+  <EntityRelationship Name="cr6e7_cr6e7_designation_Employee_contact" />
+  <EntityRelationship Name="lk_cr6e7_autonumber_createdby" />
+  <EntityRelationship Name="lk_cr6e7_autonumber_modifiedby" />
+  <EntityRelationship Name="lk_cr6e7_departments_createdby" />
+  <EntityRelationship Name="lk_cr6e7_departments_modifiedby" />
+  <EntityRelationship Name="lk_cr6e7_designation_createdby" />
+  <EntityRelationship Name="lk_cr6e7_designation_modifiedby" />
+  <EntityRelationship Name="lk_cr6e7_lead_createdby" />
+  <EntityRelationship Name="lk_cr6e7_lead_modifiedby" />
+  <EntityRelationship Name="owner_cr6e7_autonumber" />
+  <EntityRelationship Name="owner_cr6e7_departments" />
+  <EntityRelationship Name="owner_cr6e7_designation" />
+  <EntityRelationship Name="owner_cr6e7_lead" />
+  <EntityRelationship Name="team_cr6e7_autonumber" />
+  <EntityRelationship Name="team_cr6e7_departments" />
+  <EntityRelationship Name="team_cr6e7_designation" />
+  <EntityRelationship Name="team_cr6e7_lead" />
+  <EntityRelationship Name="user_cr6e7_autonumber" />
+  <EntityRelationship Name="user_cr6e7_departments" />
+  <EntityRelationship Name="user_cr6e7_designation" />
+  <EntityRelationship Name="user_cr6e7_lead" />
+</EntityRelationships>
