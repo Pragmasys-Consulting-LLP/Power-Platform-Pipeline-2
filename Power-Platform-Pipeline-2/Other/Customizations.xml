@@ -9,14 +9,18 @@
   <EntityRelationships />
   <OrganizationSettings />
   <optionsets />
-  <Dashboards />
   <CustomControls />
-  <AppModuleSiteMaps />
-  <AppModules />
   <EntityDataProviders />
   <connectionreferences>
-    <connectionreference connectionreferencelogicalname="cr6e7_sharedoffice365_d23f5">
-      <connectionreferencedisplayname>Office 365 Outlook Solution3-d23f5</connectionreferencedisplayname>
+    <connectionreference connectionreferencelogicalname="cr6e7_sharedcommondataserviceforapps_badce">
+      <connectionreferencedisplayname>Microsoft Dataverse Solution4-badce</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr6e7_sharedoffice365_ce45d">
+      <connectionreferencedisplayname>Office 365 Outlook Solution4-ce45d</connectionreferencedisplayname>
       <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
       <iscustomizable>1</iscustomizable>
       <statecode>0</statecode>
