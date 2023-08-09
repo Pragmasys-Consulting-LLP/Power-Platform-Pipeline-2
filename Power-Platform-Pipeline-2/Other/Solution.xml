@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ImportExportXml version="9.2.23074.178" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
-    <UniqueName>Solution4</UniqueName>
+    <UniqueName>Solution3</UniqueName>
     <LocalizedNames>
-      <LocalizedName description="Solution 4" languagecode="1033" />
+      <LocalizedName description="Solution 3" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.2</Version>
+    <Version>1.0.0.35</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>Crd1505</UniqueName>
@@ -78,8 +78,29 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="29" id="{48018f21-1b2a-ee11-bdf4-002248d5da74}" behavior="0" />
+      <RootComponent type="1" schemaName="cr6e7_autonumber" behavior="0" />
+      <RootComponent type="1" schemaName="cr6e7_departments" behavior="0" />
+      <RootComponent type="1" schemaName="cr6e7_designation" behavior="0" />
+      <RootComponent type="1" schemaName="cr6e7_lead" behavior="0" />
+      <RootComponent type="1" schemaName="email" behavior="2" />
+      <RootComponent type="29" id="{68049725-0426-ee11-9965-002248d5da74}" behavior="0" />
+      <RootComponent type="60" id="{736f747d-0126-ee11-9965-002248d5da74}" behavior="0" />
+      <RootComponent type="62" schemaName="cr6e7_PipelineDemoApp" behavior="0" />
+      <RootComponent type="80" schemaName="cr6e7_PipelineDemoApp" behavior="0" />
     </RootComponents>
-    <MissingDependencies />
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="sample_product" displayName="Product" solution="AssetCheckout (0.0.0.1)" />
+        <Dependent type="62" schemaName="cr6e7_PipelineDemoApp" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="sample_product" displayName="Product" solution="AssetCheckout (0.0.0.1)" />
+        <Dependent type="80" schemaName="cr6e7_PipelineDemoApp" displayName="Pipeline Demo App" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
+        <Dependent type="80" schemaName="cr6e7_PipelineDemoApp" displayName="Pipeline Demo App" />
+      </MissingDependency>
+    </MissingDependencies>
   </SolutionManifest>
 </ImportExportXml>

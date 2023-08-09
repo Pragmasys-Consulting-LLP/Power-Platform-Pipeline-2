@@ -1,0 +1,80 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr6e7_sharedoffice365_d23f5"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Week",
+            "interval": 1,
+            "startTime": "2023-07-19T04:30:00Z",
+            "schedule": {
+              "weekDays": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "57adff71-11a8-4f2a-99fc-cc9c46489c75"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Send_email_with_options": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "0e183433-c8e4-4af0-a29b-51c9b93bfd31"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365_1",
+              "operationId": "SendMailWithOptions",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "optionsEmailSubscription/Message/To": "anushree.chaturvedi@pragmasys.in",
+              "optionsEmailSubscription/Message/Subject": "Your input is required",
+              "optionsEmailSubscription/Message/Options": "Choice1, Choice2, Choice3",
+              "optionsEmailSubscription/Message/Importance": "Normal",
+              "optionsEmailSubscription/Message/HideHTMLMessage": false,
+              "optionsEmailSubscription/Message/ShowHTMLConfirmationDialog": false
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
