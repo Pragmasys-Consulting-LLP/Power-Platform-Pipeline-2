@@ -1,0 +1,84 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr6e7_sharedoffice365_ce45d"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr6e7_sharedcommondataserviceforapps_badce"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "9259c036-1a80-4683-af2c-ebac08955282"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "contact",
+              "subscriptionRequest/scope": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Send_an_email_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "f6988076-57b2-407b-b4ef-578fdd2cd52d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365_1",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "anushree.chaturvedi@pragmasys.in",
+              "emailMessage/Subject": "@{triggerOutputs()?['body/address1_city']}@{triggerOutputs()?['body/address1_line2']}@{triggerOutputs()?['body/telephone1']}",
+              "emailMessage/Body": "<p>@{triggerOutputs()?['body/address1_line1']}@{triggerOutputs()?['body/address1_line1']}@{triggerOutputs()?['body/address1_city']}@{triggerOutputs()?['body/telephone1']}@{triggerOutputs()?['body/_parentcustomerid_value@Microsoft.Dynamics.CRM.lookuplogicalname']}@{triggerOutputs()?['body/jobtitle']}@{triggerOutputs()?['body/firstname']}@{triggerOutputs()?['body/emailaddress1']}</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
